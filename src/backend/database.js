@@ -16,6 +16,8 @@ const knex = require("knex")({
 // Check that the connection works
 knex.raw("SELECT VERSION()").then(() => {
   console.log(`connection to db successful!`);
+  console.log("client port", process.env.CLIENT_PORT);
+  console.log("api port", process.env.API_PORT);
 });
 
 module.exports = knex;

@@ -1,19 +1,22 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-@import 'theme.css';
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 * {
-  font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
 }
 
-#root {
-  padding-left: 30%;
-  padding-right: 30%;
-  height: 100vh;
+.navigation {
+  overflow: hidden;
+  width: 100%;
 }
 
 body {
+  overflow: scroll;
+  width: 100%;
   margin: 0;
-  font-size: 17px;
+  font-size: 20px;
+
+}
+h1 {
+  font-weight: bolder;
 }
 
 ul {
@@ -24,29 +27,253 @@ ul {
 
 a {
   text-decoration: none;
-  color: #2d3233;
+  color: #000000;
+}
+a:hover {
+  text-decoration: underline;
+  color: #7e349b;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: bolder;
+  width: 60%;
+  margin-bottom: 1%;
+}
+h3 {
+  width: auto;
+  font-size: 1.1em;
+  margin-left: 2%;
+  color: rgb(44, 44, 44);
+  font-weight: lighter;
+  margin-top: 0;
+}
+
+.logo { 
+  width: 2.5%;
+  float: left;
+  margin-left: 21%;
+  margin-top: 0;
+  font-weight: bolder;
+  padding: 1%;
 }
 
 button {
-  background-color: #3e99c0;
-  border-radius: 8px;
+  background-color: #7e349b;
+  border-radius: 5px;
   border-width: 0px;
-  font-weight: 295;
+  font-weight: bold;
   color: rgb(255, 255, 255);
-  padding: 5px;
-  font-size: 17px;
+  padding: 1%;
+  width: auto;
+  font-size: 21px;
+  margin-left: 20%;
+  margin-top: 2%;
 }
 
-@media screen and (max-width: 1400px) {
-  #root {
-    padding-left: 30%;
-    padding-right: 30%;
-  }
+button:hover {
+	background: gray;
+	color: white;
 }
 
-@media screen and (max-width: 750px) {
-  #root {
-    padding-left: 0;
-    padding-right: 0;
-  }
+
+.navigation {
+  width: 100%;
+  height: 5%;
+  background-color: #ffffffda;
+
+}
+
+.nav-items {
+  padding: 1%;
+  width: 100%;
+  margin-left: 10%;
+  position: fixed;
+  background-color: #ffffffda;
+
+}
+
+.nav-ul {
+  margin-top: .5%;
+  width: auto;
+  display: inline-flex;
+  float: left;
+  
+}
+ 
+li {
+  padding: 5%;
+  
+}
+
+.hero {  
+  overflow: hidden;
+  display: flex;
+  width: auto;
+  height: auto;
+}
+.nav-hero-background{
+  background-image: url(https://i.ibb.co/hFL7kCb/A-white-plate-with-salad-and-floating-in-the-air-ingredients-olives-lettuce-onion-tomato-ozzarella-h.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.hero-content {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  width: 65%;
+  margin-left: 10%;
+}
+
+.footer {
+  overflow: hidden;
+  width: 100%;
+  background-color: #000000;
+}
+
+.footer-container {
+  width: 100%;
+  display: inline-flex;
+  color: whitesmoke;
+  margin-left: 35%;
+}
+
+.meals-section {
+  width: auto;
+  display: flex;
+  padding: 7%;
+
+}
+
+.meal-list-item {
+  float: left;
+  margin-right: 4%;
+  padding: 1%;
+  width: 29%;
+  height: 30%;
+  background: rgb(254, 254, 255);
+box-shadow: -10px -10px 30px
+ rgb(241, 240, 240), 10px 10px 30px rgba(241, 240, 240);
+border-radius: 5px;
+}
+
+.image-container {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.add-meal-section {
+  width: auto;
+  height: auto;
+  display: flex;
+  padding: 3%;
+
+}
+
+.add-meal-list-item {
+  float: left;
+  margin-left: 25%;
+  padding: 1%;
+  width: 50%;
+  height: 20%;
+  background: rgb(254, 254, 255);
+box-shadow: -10px -10px 30px
+ rgb(241, 240, 240), 10px 10px 30px rgba(241, 240, 240);
+border-radius: 5px;
+}
+
+.add-image-container {
+  border-radius: 5px;
+  width: 100%;
+
+}
+
+
+.about{
+  width: auto;
+  height: auto;
+  display: flex;
+
+}
+p{
+  width: 70%;
+}
+
+.about-items{
+  background-image: url("https://i.ibb.co/N14wWhq/Tasty-pizza-and-ingredients-on-blue-background.jpg" );
+  background-size: cover; 
+  background-repeat: no-repeat;
+ float: left;
+  width: 100%;
+
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-bottom: 35%;
+  margin: 0;
+}
+
+.about-image-container {
+  float: left;
+  width: 50%;
+  margin: 0;
+
+
+}
+
+input[type=text], [type=number]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  font-size: 1.1em;
+  margin-left: 30%;
+  width: 40%;
+  background-color:#7e349b;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: gray;;
+}
+
+
+
+.reservation-section {
+  width: auto;
+  height: auto;
+  display: flex;
+  padding: 3%;
+
+}
+
+.reservation-list-item {
+  float: left;
+  margin-left: 25%;
+  padding: 1%;
+  width: 50%;
+  height: 20%;
+  background: rgb(254, 254, 255);
+box-shadow: -10px -10px 30px
+ rgb(241, 240, 240), 10px 10px 30px rgba(241, 240, 240);
+border-radius: 5px;
+}
+
+.reservation-image-container {
+  border-radius: 5px;
+  width: 100%;
+
+}
+
+.reservation-meal-ul {
+  width: 100%;
 }
