@@ -8,7 +8,6 @@ import Footer from "./components/Footer";
 import ReservationForm from "./pages/Reservation";
 import AddMeal from "./pages/AddMeal";
 
-
 function App() {
   return (
     <Router>

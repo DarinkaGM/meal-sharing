@@ -3,10 +3,6 @@
   font-family: 'Inter', sans-serif;
 }
 
-.navigation {
-  overflow: hidden;
-  width: 100%;
-}
 
 body {
   overflow: scroll;
@@ -50,9 +46,9 @@ h3 {
 }
 
 .logo { 
-  width: 2.5%;
+  width: 7%;
   float: left;
-  margin-left: 21%;
+  margin-left: 50%;
   margin-top: 0;
   font-weight: bolder;
   padding: 1%;
@@ -78,18 +74,17 @@ button:hover {
 
 
 .navigation {
+  margin: 0;
   width: 100%;
-  height: 5%;
   background-color: #ffffffda;
 
 }
 
 .nav-items {
-  padding: 1%;
   width: 100%;
-  margin-left: 10%;
   position: fixed;
-  background-color: #ffffffda;
+  display: flex;
+ background-color: #ffffffbd;
 
 }
 
@@ -103,10 +98,11 @@ button:hover {
  
 li {
   padding: 5%;
+  margin-left: 10%;
   
 }
 
-.hero {  
+.hero {    
   overflow: hidden;
   display: flex;
   width: auto;

@@ -32,9 +32,11 @@ const ReservationForm = ({ noOfAvailableReservations }) => {
 
         }
     }
-    return (
+    return ( 
         <div onSubmit={onSubmit} className = "reservation-list-item">
                 <div>
+                <img className = "add-image-container" src={"https://image.freepik.com/free-photo/concept-delicious-eating-mint-background-top-view_185193-41640.jpg"}></img>
+
                 <label htmlFor="name">Name: </label>
                 <input type="text" id="name" name="userName" value={inputValues.userName}  onChange={handleOnChange}></input>
           
