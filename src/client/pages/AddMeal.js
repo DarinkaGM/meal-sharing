@@ -37,7 +37,7 @@ const AddMeal = () => {
     return (
         <div className= "add-meal-section">
             
-            <div onSubmit={onSubmit} className = "add-meal-list-item">
+            <div className = "add-meal-list-item">
                     <img className = "add-image-container" src={"https://i.ibb.co/ZSVX0WR/Hungry-dark-haired-woman-touches-stomach-wants-to-eat-something-tasty-wears-purple-t-shirt-and-pink.jpg"}></img>
                     <div>
                     <label htmlFor="title">Your favorite meal is... </label>
@@ -52,7 +52,7 @@ const AddMeal = () => {
                     <label htmlFor="price">$ </label>
                     <input type="number" id="price" name="price" value={inputValues.price} required onChange={handleOnChange} placeholder="Prace in DKK" ></input>
                     
-                    <button onClick={onSubmit}  type="submit" >Add meal</button>             
+                    <input onClick={onSubmit}  type="submit" value="Add meal"></input>             
                     </div> 
             </div>  
 
