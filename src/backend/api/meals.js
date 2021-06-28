@@ -43,7 +43,7 @@ router.get("/", async (request, response) => {
         }
       } catch (error) {
         throw error;
-      });
+      }});
 
 
 
