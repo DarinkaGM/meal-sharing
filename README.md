@@ -1,1 +1,1 @@
-Link to deployed website: https://git.heroku.com/darinka-meal-sharing.git
+Link to deployed website: http://darinka-meal-sharing.herokuapp.com
