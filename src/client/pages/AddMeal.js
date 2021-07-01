@@ -25,7 +25,7 @@ const AddMeal = () => {
         }
 
         try {
-            await postData('/api/meals', meal);
+            await postData('api/meals', meal);
             alert(`Yaay! ${meal.title} was added`)
 
         } catch {

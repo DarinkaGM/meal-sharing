@@ -12,16 +12,22 @@ router.get("/", async (request, response) => {
       return;
     };
 
-    if (request.query.availableReservations) {
-          const getAvailableReservation = await knex("meals")
-            .select("title", "description")
-            .join("reservation", "meal.id", "=", "reservation.meal_id")
-            .where("max_reservations", ">", "number_of_guests")
-            .groupBy("reservation.meal_id");
-          response.json(getAvailableReservation);
-
-        }
-
+    if ("availableReservations" in request.query) {
+      let availableReservations = request.query.availableReservations;
+       if (availableReservations === "true") {
+         const filteredMeals = await knex
+           .raw(
+             `select meal.id AS meal_id, meal.title, meal.max_reservations, coalesce(SUM(reservation.number_of_guests), 0) AS total_reservations
+                from meal
+                left join reservation on meal.id = reservation.meal_id
+                group by meal.id
+                having 
+                meal.max_reservations > total_reservations`
+                )
+           .then((result) => result[0]);
+ 
+         response.send(filteredMeals);
+       }
 
     if ("title" in request.query) {
       const matchingTitle = request.query.title.toLocaleLowerCase()
@@ -47,10 +53,7 @@ router.get("/", async (request, response) => {
       response.json(meals);
     }
 
-  } catch (error) {
-    throw error;
-  }
-
+  } 
 });
 
 
@@ -58,9 +61,7 @@ router.post("/", async (request, response) => {
   try {
     const addMeal = await knex("meals").insert(request.body);
     response.json(addMeal);
-  } catch (error) {
-    throw error;
-  }
+  } 
 });
 
 router.get("/:id", async (request, response) => {
@@ -70,21 +71,19 @@ router.get("/:id", async (request, response) => {
         id: parseInt(request.params.id)
       })
     response.json(mealById)
-  } catch (error) {
-    throw error;
-  }
+  } 
 });
 
 router.put("/:id", async (request, response) => {
   try {
-    const updatedMealId = await knex("meals")
-      .where({
-        id: Number(request.params.id)
-      })
-      .update(request.body)
-    response.json(updatedMealId)
-  } catch (error) {
-    throw error;
+    const id = parseInt(request.params.id);
+    if (isNaN(id)) {
+      response.status(404).send("User IDs should be integers.");
+      return;
+    } else {
+      const meals = await knex("meal").where({ id: id }).update(request.body);
+      response.json(meals);
+    }
   }
 });
 
@@ -95,9 +94,7 @@ router.delete("/:id", async (request, response) => {
         id: request.params.id
       }).del()
     response.json(deletedById)
-  } catch (error) {
-    throw error;
-  }
+  } 
 });
 
 module.exports = router;

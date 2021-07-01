@@ -47,11 +47,11 @@ h3 {
 
 .logo { 
   width: 7%;
-  float: left;
-  margin-left: 50%;
-  margin-top: 0;
+  float: right;
+  margin-right: inherit;
+  margin-top: 2%;
   font-weight: bolder;
-  padding: 1%;
+  padding: 2%;
 }
 
 button {
@@ -77,14 +77,15 @@ button:hover {
   margin: 0;
   width: 100%;
   background-color: #ffffffda;
+  display: flex;
 
 }
 
 .nav-items {
   width: 100%;
   position: fixed;
-  display: flex;
  background-color: #ffffffbd;
+ display: flex;
 
 }
 
@@ -98,7 +99,7 @@ button:hover {
  
 li {
   padding: 5%;
-  margin-left: 10%;
+  margin-left: 5%;
   
 }
 
