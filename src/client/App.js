@@ -5,7 +5,7 @@ import Home from "./pages/landingPage";
 import About from "./pages/About";
 import Meal from "./pages/MealsList";
 import Footer from "./components/Footer";
-import ReservationForm from "./pages/Reservation";
+import ReservationForm from "./pages/AddReservation";
 import AddMeal from "./pages/AddMeal";
 
 function App() {
