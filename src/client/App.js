@@ -10,6 +10,7 @@ import AddMeal from "./pages/AddMeal";
 
 function App() {
   return (
+    <switch>
     <Router>
       <Route exact path="/">
         <div className= "nav-hero-background">
@@ -42,6 +43,7 @@ function App() {
         <Footer />
       </Route>
      </Router>
+     </switch>
   );
 }
 
