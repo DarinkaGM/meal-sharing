@@ -30,7 +30,7 @@ app.use(process.env.API_PATH, router);
 
 // for the frontend. Will first be covered in the react class
 app.use("*", (req, res) => {
-  res.sendFile(path.join(`${buildPath}/index.html`));
+  res.sendFile(path.join(`${buildPath}/App.js`));
 });
 
 module.exports = app;
